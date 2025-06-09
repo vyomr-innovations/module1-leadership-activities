@@ -1,0 +1,37 @@
+.div_m{
+    margin-left: 30px;
+}
+
+.mainHeading_m {
+    font-size: 25px;
+    margin: 20px;
+    font-weight: 600;
+}
+
+.l1_m {
+    margin-bottom: 50px;
+}
+
+.l1_m .heading1 {
+    background-color: #a3cd1e;
+    padding: 5px 100px;
+    border-radius: 4px;
+    color: #211e1e;
+    font-size: 20px;
+}
+
+.l1_m .l2_m {
+    margin: 10px;
+}
+
+.l1_m .l2_m .heading2 {
+    background: #a2cd1f;
+    padding: 5px 30px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.l1_m .l2_m .l3_m {
+    font-size: 16px;
+    margin: 10px;
+}

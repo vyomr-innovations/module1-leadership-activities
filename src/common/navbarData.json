@@ -1,0 +1,280 @@
+{
+    "L1": {
+        "Trial": {
+            "Activity 3": {
+                "link": "/L1/T/Activity-3",
+                "name": "Recorder"
+            }
+        },
+        "C1": {
+            "Activity 2": {
+                "link": "/L1/C1/Activity-2",
+                "name": "Fixed Sequencing"
+            }
+        },
+        "C2": {
+            "Activity 1": {
+                "link": "/L1/C2/Activity-1",
+                "name": "Mood Meter"
+            }
+        },
+        "C3": {
+            "Activity 1": {
+                "link": "/L1/C3/Activity-1",
+                "name": "Sorting"
+            },
+            "Activity 3": {
+                "link": "/L1/C3/Activity-3",
+                "name": "Reordering"
+            },
+            "Activity 4": {
+                "link": "/L1/C3/Activity-4",
+                "name": "Checklist"
+            }
+        },
+        "C4": {
+            "Activity 1": {
+                "link": "/L1/C4/Activity-1",
+                "name": "What do you hear?"
+            },
+            "Activity 2": {
+                "link": "/L1/C4/Activity-2",
+                "name": "How well do I listen?"
+            },
+            "Additional Activity": {
+                "link": "/L1/C4/AA",
+                "name": "Listen and Answer"
+            },
+            "PCS": {
+                "link": "/L1/C4/pcs",
+                "name": "Express your thoughts"
+            }
+        },
+        "C5": {
+            "Activity 1": {
+                "link": "/L1/C5/Activity-1",
+                "name": "I Spy"
+            },
+            "Activity 2": {
+                "link": "/L1/C5/Activity-2",
+                "name": "Responsible actions"
+            },
+            "Activity 3": {
+                "link": "/L1/C5/Activity-3",
+                "name": "Learn with story"
+            },
+            "Activity 4": {
+                "link": "/L1/C5/Activity-4",
+                "name": "Apology"
+            },
+            "Activity 5": {
+                "link": "/L1/C5/Activity-5",
+                "name": "Excess and wastage"
+            }
+        },
+        "C6": {
+            "Activity 2": {
+                "link": "/L1/C6/Activity-2",
+                "name": "Tic Tac Toe"
+            },
+            "Activity 3": {
+                "link": "/L1/C6/Activity-3",
+                "name": "Good choice, bad choice"
+            }
+        },
+        "C7": {
+            "Activity 1": {
+                "link": "/L1/C7/Activity-1",
+                "name": "What else could it be?"
+            }
+        },
+        "C8": {
+            "Activity 1": {
+                "link": "/L1/C8/Activity-1",
+                "name": "Table Tools"
+            },
+            "Activity 4": {
+                "link": "/L1/C8/Activity-4",
+                "name": "Odd one out"
+            },
+            "Activity 5": {
+                "link": "/L1/C8/Activity-5",
+                "name": "Table manners"
+            },
+            "Additional-Activity": {
+                "link": "/L1/C8/Additional-Activity",
+                "name": "Identify meal"
+            }            
+        }
+    },
+    "L2": {
+        "C3": {
+            "Activity 3": {
+                "link": "/L2/C3/Activity-3",
+                "name": "Urgent-Important"
+            },
+            "PCS": {
+                "link": "/L2/C3/pcs",
+                "name": "Plan Itiniery"
+            }
+        },
+        "C4": {
+            "Activity 1": {
+                "link": "/L2/C4/Activity-1",
+                "name": "Sound detective"
+            },
+            "Activity 2": {
+                "link": "/L2/C4/Activity-2",
+                "name": "Listening skill test"
+            },
+            "Activity 4": {
+                "link": "/L2/C4/Activity-4",
+                "name": "Dialogue skills"
+            }
+        },
+        "C5": {
+            "Activity 1": {
+                "link": "/L2/C5/Activity-1",
+                "name": "What will happen"
+            },
+            "Activity 2": {
+                "link": "/L2/C5/Activity-2",
+                "name": "Story time"
+            },
+            "Activity 3": {
+                "link": "/L2/C5/Activity-3",
+                "name": "Careful v/s Careless"
+            },
+            "Activity 4": {
+                "link": "/L2/C5/Activity-4",
+                "name": "Environment responsibility"
+            },
+            "Additional Activity": {
+                "link": "/L2/C5/Additional-Activity",
+                "name": "Positive and negative impact"
+            }
+        },
+        "C6": {
+            "Activity 3": {
+                "link": "/L2/C6/Activity-3",
+                "name": "Build a story"
+            },
+            "Activity 4": {
+                "link": "/L2/C6/Activity-4",
+                "name": "Care framework"
+            },
+            "Activity 5": {
+                "link": "/L2/C6/Activity-5",
+                "name": "Flow chart"
+            },
+            "Activity 6": {
+                "link": "/L2/C6/Activity-6",
+                "name": "Effort-Impact matrix to stay fit"
+            },
+            "Activity 6b": {
+                "link": "/L2/C6/Activity-6b",
+                "name": "Effort-Impact matrix to celebrate parent's birthday"
+            }
+        },
+        "C7": {
+            "Activity 2": {
+                "link": "/L2/C7/Activity-2",
+                "name": "Ideate"
+            },
+            "Activity 5": {
+                "link": "/L2/C7/Activity-5",
+                "name": "Describe and record"
+            }
+        },
+        "C8": {
+            "Activity 2": {
+                "link": "/L2/C8/Activity-2",
+                "name": "Table tools"
+            },
+            "Activity 3": {
+                "link": "/L2/C8/Activity-3",
+                "name": "Good manner detective"
+            }
+        }
+    },
+    "L3": {
+        "C2": {
+            "Activity 3": {
+                "link": "/L3/C2/Activity-3",
+                "name": "Emotion Wheel"
+            },
+            "Activity 4": {
+                "link": "/L3/C2/Activity-4",
+                "name": "Regulate Emotions with RULER"
+            }
+        },
+        "C3": {
+            "Activity 1": {
+                "link": "/L3/C3/Activity-1",
+                "name": "Grouping"
+            },
+            "Activity 4": {
+                "link": "/L3/C3/Activity-4",
+                "name": "Daily schedule"
+            },
+            "Activity 5": {
+                "link": "/L3/C3/Activity-5",
+                "name": "Digital Detox Schedule"
+            },
+            "PCS": {
+                "link": "/L3/C3/pcs",
+                "name": "Beach Day Packing"
+            }
+        },
+        "C4": {
+            "PCS": {
+                "link": "/L3/C4/pcs",
+                "name": "3-min talk"
+            }
+        },
+        "C5": {
+            "Activity 2": {
+                "link": "/L3/C5/Activity-2",
+                "name": "Timely completion"
+            },
+            "PCS": {
+                "link": "/L3/C5/pcs",
+                "name": "Responsibility chart"
+            }
+        },
+        "C6": {
+            "Activity 2": {
+                "link": "/L3/C6/Activity-2",
+                "name": "Build a story"
+            },
+            "Activity 3a": {
+                "link": "/L3/C6/Activity-3a",
+                "name": "Pugh Matrix"
+            },
+            "Activity 4": {
+                "link": "/L3/C6/Activity-4",
+                "name": "Setting priority"
+            }
+        },
+        "C7": {
+            "Activity 3": {
+                "link": "/L3/C7/Activity-3",
+                "name": "2 cases"
+            },
+            "Activity 6": {
+                "link": "/L3/C7/Activity-6",
+                "name": "Drumroll"
+            }
+        },
+        "C8": {
+            "Activity 2": {
+                "link": "/L3/C8/Activity-2",
+                "name": "Table manners"
+            },
+            "Activity 5": {
+                "link": "/L3/C8/Activity-5",
+                "name": "Arrange knife and fork"
+            }
+        }
+    }
+}
