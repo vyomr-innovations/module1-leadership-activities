@@ -1,11 +1,11 @@
 "use client"; 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import AlarmClock from '../assets/alarmClock.png'
 import BathTub from '../assets/bathTub.png'
 import BrushTeeth from '../assets/brushTeeth.png'
 import Pajamas from '../assets/pajamas.png'
-import ReadStories from '../assets/ReadStories.png'
-import Sleep from '../assets/Sleep.png'
+import ReadStories from '../assets/readStories.png'
+import Sleep from '../assets/sleep.png'
 import Image from 'next/image';
 
 const tasks = [
