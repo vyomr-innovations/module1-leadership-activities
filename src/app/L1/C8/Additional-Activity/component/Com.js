@@ -93,6 +93,7 @@ export default function Com() {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-50 p-4">
+      <h1 className="text-2xl font-bold">Identify the type of meal from table settings</h1>
       <div className="w-full max-w-xl mt-5 text-center">
         {gameCompleted ? (
           <div className="text-2xl font-bold p-8 bg-green-100 rounded-lg shadow-md">

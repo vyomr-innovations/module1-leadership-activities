@@ -31,9 +31,9 @@ const TrashIcon = () => (
 export default function TaskTable() {
   const [rows, setRows] = useState(() => {
     return [
-      { id: Date.now(), time: "08:00", selectedTask: predefinedTasks[0], customText: "", isCustom: false },
-      { id: Date.now() + 1, time: "09:00", selectedTask: predefinedTasks[1], customText: "", isCustom: false },
-      { id: Date.now() + 2, time: "10:00", selectedTask: predefinedTasks[2], customText: "", isCustom: false }
+      { id: Date.now(), time: "08:00", selectedTask: "", customText: "", isCustom: false },
+      { id: Date.now() + 1, time: "09:00", selectedTask: "", customText: "", isCustom: false },
+      { id: Date.now() + 2, time: "10:00", selectedTask: "", customText: "", isCustom: false }
     ];
   });
 
@@ -144,13 +144,13 @@ export default function TaskTable() {
                       onChange={(e) => updateRow(row.id, "selectedTask", e.target.value)}
                       className="block w-full border border-gray-300 rounded-lg px-3 py-2 text-sm sm:text-base shadow-sm focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 mb-2"
                     >
-                      <option value="">-- Select Task --</option> {/* Explicit empty value for default */}
+                      <option value="" disabled>Select Task</option>
                       {predefinedTasks.map((taskOption) => (
                         <option key={taskOption} value={taskOption}>
                           {taskOption}
                         </option>
                       ))}
-                      <option value="add-text">Add Custom Text</option> {/* This option triggers custom input */}
+                      <option value="add-text">Add Custom Text</option>
                     </select>
 
                     {/* Conditionally render the custom text input */}

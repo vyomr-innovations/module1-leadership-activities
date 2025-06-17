@@ -19,11 +19,11 @@ const tasks = [
   },
   {
     text: "Put on Pajamas",
-    image: BrushTeeth,
+    image: Pajamas,
   },
   {
     text: "Brush Teeth",
-    image: Pajamas,
+    image: BrushTeeth,
   },
   {
     text: "Read story",
@@ -49,7 +49,7 @@ const Com = () => {
   const [result, setResult] = useState("");
   const [resultColor, setResultColor] = useState("");
   const [selectedRowIndex, setSelectedRowIndex] = useState(null);
-
+  const [err, setErr] = useState("")
   // State to manage drag and drop
   const [draggingItemIndex, setDraggingItemIndex] = useState(null);
 
@@ -66,12 +66,14 @@ const Com = () => {
   };
 
   const selectRow = (index) => {
+    setErr("")
     setSelectedRowIndex(index);
   };
 
   const moveRow = (direction) => {
+    setErr("")
     if (selectedRowIndex === null) {
-      alert("Please select a row first!");
+      setErr("Please select a row first!");
       return;
     }
 
@@ -93,6 +95,7 @@ const Com = () => {
   };
 
   const checkResult = () => {
+    setErr("")
     const orderedTaskNames = currentTasks.map((task) => task.text);
     if (JSON.stringify(orderedTaskNames) === JSON.stringify(correctOrder)) {
       setResult("Great job! You got the right order!");
@@ -175,6 +178,12 @@ const Com = () => {
       {result && (
         <p className={`text-center text-lg font-semibold mb-6 ${resultColor}`}>
           {result}
+        </p>
+      )}
+
+      {err && (
+        <p className={`text-center text-lg font-semibold mb-6 text-red-600`}>
+          {err}
         </p>
       )}
 

@@ -45,6 +45,12 @@ export default function SceneSwitcher() {
           Positive and Negative Impact
         </h1>
 
+        <p className="text-xl mb-[10px]">
+          Compare the two scenes to evaluate the outcomes for each.
+        </p>
+        <p className="text-xl mb-[20px]">
+          Which of the two situations do you identify with more?
+        </p>
         <div className="scene-container flex flex-col md:flex-row justify-around items-start md:items-center gap-6 mb-4 mt-2">
           {currentScenes.map((scene) => (
             <div key={scene.id} className="scene-item w-full md:w-5/12 flex flex-col items-center">

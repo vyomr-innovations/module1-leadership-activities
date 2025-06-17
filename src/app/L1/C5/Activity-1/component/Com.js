@@ -101,7 +101,7 @@ export default function Com() {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-100 p-4">
-      <h1 className="text-3xl font-bold mb-6 mt-8 text-gray-800">
+      <h1 className="text-3xl font-bold mb-2 mt-8 text-gray-800">
         Welcome to the I Spy Game!
       </h1>
 
@@ -115,12 +115,12 @@ export default function Com() {
       )}
 
       {gameStarted && !isGameComplete && (
-        <div className="w-full max-w-2xl bg-white p-6 rounded-lg shadow-lg flex flex-col items-center mt-5">
+        <div className="w-full bXg-white h-min-screen p-6 rounded-lg shadow-lg flex flex-col items-center">
           <img
             id="image"
             src={images[currentImageIndex]?.src}
             alt="I Spy Image"
-            className="w-4/5 h-auto rounded-md border-2 border-gray-300 mb-4"
+            className="w-[650px] h-auto rounded-md border-2 border-gray-300 mb-4"
           />
           <div id="question" className="text-xl text-gray-800 mb-6 text-center">
             {images[currentImageIndex]?.questions[currentQuestionIndex]}

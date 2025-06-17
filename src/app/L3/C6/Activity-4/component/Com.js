@@ -15,15 +15,15 @@ const allTasksData = [
 ];
 
 const correctPlacement = {
-  task1: "urgent-important", 
-  task2: "not-urgent-important", 
-  task3: "not-urgent-important", 
-  task4: "urgent-not-important",
-  task5: "not-urgent-important",
-  task6: "not-urgent-not-important", 
-  task7: "urgent-not-important",
-  task8: "not-urgent-not-important",
-  task9: "urgent-important",
+  task1: "urgent-important", // Eat breakfast
+  task2: "not-urgent-important", // Regular exercise
+  task3: "not-urgent-important", // Take vaccination
+  task4: "not-urgent-not-important", // Long phone call with a friend
+  task5: "not-urgent-important", // Study for next month’s test
+  task6: "not-urgent-not-important", // Pizza party
+  task7: "urgent-not-important", // Responds to chat messages
+  task8: "not-urgent-not-important", // Vacation
+  task9: "urgent-important", // Study for tomorrow’s test
 };
 
 const quadrantsData = [
@@ -36,7 +36,7 @@ const quadrantsData = [
 const TaskSortingPuzzle = () => {
   const [tasks, setTasks] = useState([]);
   const [resultMessage, setResultMessage] = useState(
-    "Drag and drop each task into the correct box"
+    "Group the tasks as per their importance and urgency. "
   );
   const [resultColor, setResultColor] = useState("text-gray-700");
   const [hoveredQuadrantId, setHoveredQuadrantId] = useState(null);
@@ -82,13 +82,13 @@ const TaskSortingPuzzle = () => {
             return { ...task, location: "available" };
           }
         }
-        return task; 
+        return task;
       });
     });
 
-    setResultMessage("Drag and drop each task into the correct box");
+    setResultMessage("Group the tasks as per their importance and urgency.");
     setResultColor("text-gray-700");
-    setShowCheckSolutionButton(true); 
+    setShowCheckSolutionButton(true);
   };
 
   const checkSolution = () => {
@@ -125,8 +125,8 @@ const TaskSortingPuzzle = () => {
 
   return (
     <div className="container mx-auto p-4 w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-200 to-pink-300 rounded-lg shadow-2xl">
-      <h1 className="text-3xl font-extrabold mb-4 text-white drop-shadow-lg">
-        Task Sorting Puzzle
+      <h1 className="text-3xl font-extrabold mb-4 drop-shadow-lg">
+        Setting Priority
       </h1>
 
       {showCheckSolutionButton && (
@@ -151,11 +151,11 @@ const TaskSortingPuzzle = () => {
           onDragLeave={handleDragLeave}
         >
           <h2 className="text-2xl font-bold text-gray-800 w-full text-center mb-2">
-            Available Tasks
+            List of Tasks
           </h2>
           {availableTasks.length === 0 ? (
             <p className="text-gray-500 text-lg self-center">
-              All tasks are placed in the quadrants!
+              All the tasks are grouped correctly
             </p>
           ) : (
             availableTasks.map((task) => (
@@ -163,7 +163,7 @@ const TaskSortingPuzzle = () => {
                 key={task.id}
                 id={task.id}
                 className="task bg-indigo-100 text-indigo-800 font-semibold text-[17px] py-3 px-5 rounded-full shadow-md cursor-grab transition-all duration-200 ease-in-out hover:bg-indigo-200 hover:shadow-lg text-center"
-                draggable 
+                draggable
                 onDragStart={(e) => handleDragStart(e, task.id)}
               >
                 {task.text}

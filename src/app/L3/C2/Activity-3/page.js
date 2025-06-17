@@ -17,6 +17,8 @@ export default function FeelingsWheel() {
   const [dragged, setDragged] = useState(null);
   const usedPositions = useRef({});
   const coreAngles = useRef({});
+  const [placedFeelingsCount, setPlacedFeelingsCount] = useState({});
+  const [showCelebration, setShowCelebration] = useState(false);
 
   const [feelingsDataState, setFeelingsDataState] = useState(() => ({
     Anger: [
@@ -69,6 +71,16 @@ export default function FeelingsWheel() {
     ],
   }));
 
+  useEffect(() => {
+    // Initialize placedFeelingsCount for each core emotion
+    const initialCounts = {};
+    coreEmotions.forEach(emotion => {
+      initialCounts[emotion.name] = 0;
+    });
+    setPlacedFeelingsCount(initialCounts);
+  }, []);
+
+
   const handleDragStart = (e, feeling) => {
     setDragged(feeling);
   };
@@ -120,6 +132,18 @@ export default function FeelingsWheel() {
       ...prev,
       [dragged.core]: prev[dragged.core].filter((f) => f.name !== dragged.name),
     }));
+
+    setPlacedFeelingsCount((prev) => {
+      const newCount = {
+        ...prev,
+        [targetCore]: (prev[targetCore] || 0) + 1,
+      };
+      if (newCount[targetCore] === 4) {
+        setShowCelebration(true);
+        setTimeout(() => setShowCelebration(false), 3000); // Hide celebration after 3 seconds
+      }
+      return newCount;
+    });
   };
 
   const getColor = (core, intensity) => {
@@ -136,9 +160,13 @@ export default function FeelingsWheel() {
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800 drop-shadow">
+      <h1 className="text-3xl font-bold text-center mb-4 text-gray-800 drop-shadow">
         The Feelings Wheel
       </h1>
+      <p className="text-lg text-center mb-8 text-gray-600">
+        Think about the various feelings you experience. Fill the empty wheel by
+        dragging and dropping four feeling words for each core emotion.
+      </p>
 
       <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
         {/* Wheel */}
@@ -162,6 +190,11 @@ export default function FeelingsWheel() {
               {name}
             </div>
           ))}
+          {showCelebration && (
+            <div className="absolute inset-0 flex items-center justify-center bg-green-500 bg-opacity-75 text-white text-4xl font-bold rounded-full animate-pulse">
+              Great Job!
+            </div>
+          )}
         </div>
 
         {/* Feelings List */}

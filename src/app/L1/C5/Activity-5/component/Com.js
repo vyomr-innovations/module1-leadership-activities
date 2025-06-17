@@ -59,6 +59,14 @@ export default function ImageSlideshow() {
       <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 w-full max-w-xl text-center">
         {!isFinished ? (
           <>
+            <div className="mb-6 text-left">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">You have to:</h3>
+              <ul className="list-disc list-inside text-gray-700 text-sm md:text-base">
+                <li>Describe what you see.</li>
+                <li>Check if the action is well-placed or not.</li>
+                <li>For every action that can be modified, suggest how to do so.</li>
+              </ul>
+            </div>
             <img
               src={situations[index].image}
               alt="situation"

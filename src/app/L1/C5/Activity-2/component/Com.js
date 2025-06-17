@@ -50,12 +50,25 @@ export default function BehaviourPage() {
               className="w-full max-w-md h-auto rounded-lg"
             />
           </div>
-          <button
+
+          <div className="space-x-4">
+            <button 
+            onClick={nextImage}
+            className="w-[200px] text-white text-[17px] cursor-pointer py-[10px] rounded-[10px] bg-red-600 hover:bg-red-700">
+              Needs improvement
+            </button>
+            <button 
+            onClick={nextImage}
+            className="w-[200px] text-white text-[17px] cursor-pointer py-[10px] rounded-[10px] bg-green-600 hover:bg-green-700">
+              Responsible
+            </button>
+          </div>
+          {/* <button
             onClick={nextImage}
             className="px-6 py-3 bg-indigo-600 text-white rounded-full font-semibold hover:bg-indigo-700 shadow-md transition"
           >
             Next
-          </button>
+          </button> */}
         </div>
       ) : (
         <div className="w-full max-w-4xl bg-white shadow-xl rounded-2xl p-6">

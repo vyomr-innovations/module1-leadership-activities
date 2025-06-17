@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const carouselItems = [
   {
@@ -29,24 +29,31 @@ export default function ImpactCarousel() {
   };
 
   const goToPrevSlide = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === 0 ? carouselItems.length - 1 : prevIndex - 1
-    );
+    setActiveIndex((prev) => (prev === 0 ? carouselItems.length - 1 : prev - 1));
   };
 
   const goToNextSlide = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
-    );
+    setActiveIndex((prev) => (prev === carouselItems.length - 1 ? 0 : prev + 1));
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-teal-200 p-4 sm:p-8 flex flex-col items-center justify-center font-sans">
-      <div className="container bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xl border border-indigo-200 w-full text-center">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-8 drop-shadow-sm">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-teal-200 px-4 flex flex-col items-center justify-center font-sans">
+      <div className="container bg-white/90 backdrop-blur-sm p-6 sm:p-4 rounded-2xl shadow-xl border border-indigo-200 w-full text-center">
+        <h1 className="text-2xl sm:text-2xl font-extrabold text-gray-800 mb-2 drop-shadow-sm">
           Positive and Negative Impact
         </h1>
 
+        {/* Instructions */}
+        <p className="text-gray-700 text-md sm:text-lg mb-4">
+          Think of the impact of the actions if done correctly or not. Complete the statements:
+        </p>
+
+        <ul className="text-left text-gray-800 font-medium bg-white/80 rounded-lg p-4 mb-3 border border-indigo-100 shadow-sm max-w-2xl mx-auto list-disc pl-6 space-y-2">
+          <li>If done well, ___________</li>
+          <li>If not done well, ___________</li>
+        </ul>
+
+        {/* Carousel */}
         <div className="relative w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-lg border border-gray-200">
           <div className="relative h-96 sm:h-[450px] md:h-[500px]">
             {carouselItems.map((item, index) => (
@@ -70,18 +77,20 @@ export default function ImpactCarousel() {
             {carouselItems.map((_, index) => (
               <button
                 key={index}
-                className={`w-3 h-3 rounded-full ${
-                  index === activeIndex ? "bg-white" : "bg-gray-400"
-                } focus:outline-none focus:ring-2 focus:ring-white`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === activeIndex
+                    ? "bg-white shadow-md scale-110"
+                    : "bg-gray-400 hover:bg-white/70"
+                }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
-              ></button>
+              />
             ))}
           </div>
 
           {/* Carousel Controls */}
           <button
-            className="absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-40 hover:bg-opacity-60 text-white p-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
+            className="shadow-[10px_10px_30px_15px_rgba(255,255,255,0.4)] hover:bg-gray-500 cursor-pointer absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-40 hover:bg-opacity-60 text-white p-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
             onClick={goToPrevSlide}
             aria-label="Previous slide"
           >
@@ -101,7 +110,7 @@ export default function ImpactCarousel() {
             </svg>
           </button>
           <button
-            className="absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-40 hover:bg-opacity-60 text-white p-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
+            className="shadow-[10px_10px_30px_15px_rgba(255,255,255,0.4)] hover:bg-gray-500 cursor-pointer absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-40 hover:bg-opacity-60 text-white p-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
             onClick={goToNextSlide}
             aria-label="Next slide"
           >
@@ -123,7 +132,7 @@ export default function ImpactCarousel() {
         </div>
 
         {/* Title Below the Slider */}
-        <div className="mt-6 p-4 bg-white rounded-lg shadow-md border border-gray-200">
+        <div className="mt-4 p-4 bg-white rounded-lg shadow-md border border-gray-200">
           <h5 className="text-xl sm:text-2xl font-bold text-gray-800">
             {carouselItems[activeIndex].title}
           </h5>

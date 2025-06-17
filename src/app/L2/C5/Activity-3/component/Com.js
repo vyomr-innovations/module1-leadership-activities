@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Confetti from "react-confetti";
 
 const allItems = [
   "Clean up the dinner table.",
@@ -52,6 +53,8 @@ export default function ClassifyTilesGame() {
   const [modalMessage, setModalMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
 
+  const [err, setErr] = useState(false)
+
   useEffect(() => {
     const shuffledItems = shuffleArray(allItems);
     setTiles(shuffledItems.map((item, index) => ({ id: `tile-${index}`, text: item })));
@@ -77,6 +80,7 @@ export default function ClassifyTilesGame() {
 
     if (!draggedTile) return;
 
+    setErr(false)
     setTiles((prev) => prev.filter((t) => t.id !== tileId));
     setResponsibleTiles((prev) => prev.filter((t) => t.id !== tileId));
     setNeedsEffortTiles((prev) => prev.filter((t) => t.id !== tileId));
@@ -107,12 +111,14 @@ export default function ClassifyTilesGame() {
 
     if (isResponsibleCorrect && isNeedsEffortCorrect) {
       setModalMessage("Congratulations! You classified all tiles correctly!");
+      setShowModal(true);
       // On correct answer, keep the state, but allow them to click OK
     } else {
       setModalMessage("Try Again! Some tiles are incorrectly classified.");
+      setErr(true)
       // On incorrect answer, close modal and keep current state
     }
-    setShowModal(true);
+    
   };
 
   const closeModal = () => {
@@ -132,11 +138,17 @@ export default function ClassifyTilesGame() {
     <div className="min-h-screen bg-gradient-to-br from-teal-100 to-green-200 p-4 flex flex-col items-center justify-center font-sans">
       <div className="container bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xl border border-teal-200 w-full text-center">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-6 drop-shadow-sm">
-          Classify the Tiles
+          Classify the actions
         </h1>
-        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          Drag and drop the tiles into the appropriate category! Once all tiles are placed, click <span className="font-bold">Submit</span>.
+        <p className="text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          Drag and drop the actions into the appropriate category! Once all actions are placed, click <span className="font-bold">Submit</span>.
         </p>
+
+
+        {err &&
+          <p className="text-red-600 mb-[20px] text-xl">Try Again! Some actions are incorrectly classified.</p>
+        }
+
 
         <div className="board grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
@@ -144,7 +156,7 @@ export default function ClassifyTilesGame() {
             onDrop={(e) => handleDrop(e, "tilesContainer")}
             onDragOver={handleDragOver}
           >
-            <h2 className="text-xl font-bold text-gray-700 mb-4">Tiles</h2>
+            <h2 className="text-xl font-bold text-gray-700 mb-4">Actions</h2>
             <div id="tilesContainer" className="tile-list flex flex-wrap gap-3 justify-center min-h-[150px] w-full">
               {tiles.map((tile) => (
                 <div
@@ -218,17 +230,19 @@ export default function ClassifyTilesGame() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white p-6 rounded-lg shadow-2xl text-center max-w-sm w-full">
-            <h3 className="text-xl font-bold text-gray-800 mb-4" id="alertMessage">{modalMessage}</h3>
-            <button
-              onClick={closeModal}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-              OK
-            </button>
+        <>
+          <Confetti
+            width={typeof window !== "undefined" ? window.innerWidth : 0}
+            height={typeof window !== "undefined" ? window.innerHeight : 0}
+            numberOfPieces={5000}
+            recycle={false}
+          />
+          <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+            <div className="bg-white bg-opacity-90 rounded-xl px-8 py-6 shadow-2xl animate-bounce animate-pulse text-center">
+              <h2 className="text-5xl font-extrabold text-green-600 mb-2">🎉 Great Job!</h2>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

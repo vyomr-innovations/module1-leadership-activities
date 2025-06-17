@@ -4,6 +4,42 @@ import React, { useState, useEffect, useRef } from "react";
 
 const quizSounds = [
   {
+    audio: "https://res.cloudinary.com/dey9w5okl/video/upload/v1750182858/audios/lion.mp3",
+    question: "What sound is this",
+    options: ["Elephant", "Lion"],
+    correct: "Lion"
+  },
+  {
+    audio: "https://res.cloudinary.com/dey9w5okl/video/upload/v1750182967/audios/guitar.mp3",
+    question: "What sound is this",
+    options: ["Guitar", "Violin"],
+    correct: "Guitar"
+  },
+  {
+    audio: "https://res.cloudinary.com/dey9w5okl/video/upload/v1750182895/audios/ocean.mp3",
+    question: "What sound is this",
+    options: ["Rain", "Ocean"],
+    correct: "Ocean"
+  },
+  {
+    audio: "https://res.cloudinary.com/dey9w5okl/video/upload/v1750182931/audios/train.mp3",
+    question: "What sound is this",
+    options: ["Train", "Car"],
+    correct: "Train"
+  },
+  {
+    audio: "https://res.cloudinary.com/dey9w5okl/video/upload/v1750183007/audios/nightingale.mp3",
+    question: "What sound is this",
+    options: ["Crow", "Nightingale"],
+    correct: "Nightingale"
+  },
+  {
+    audio: "https://res.cloudinary.com/dey9w5okl/video/upload/v1750182684/audios/drums.mp3",
+    question: "What sound is this?",
+    options: ["Drum", "guiter"],
+    correct: "Drum",
+  },
+  {
     audio:
       "https://res.cloudinary.com/dey9w5okl/video/upload/v1732604365/rooster_tw38jb.mp3",
     question: "What sound is this?",

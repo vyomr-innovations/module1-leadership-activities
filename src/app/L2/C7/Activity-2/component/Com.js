@@ -29,7 +29,7 @@ export default function Com() {
 
   return (
     <div className="bg-[#C4FFF9] text-[#07BEB8] font-sans p-8 min-h-screen flex items-center justify-center">
-      <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-xl">
+      <div className="max-w-6xl mx-auto bg-white p-8 rounded-xl shadow-xl">
         <h1 className="text-center text-black mb-6 text-4xl font-extrabold">
           Ideate!!
         </h1>
@@ -52,48 +52,54 @@ export default function Com() {
             ))}
           </div>
 
-          <button
-            style={{ opacity: 0.5 }}
-            className="absolute top-1/2 left-4 -translate-y-1/2 bg-[#3DCCC7] text-white p-3 rounded-full cursor-pointer hover:bg-[#07BEB8] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#07BEB8]"
-            onClick={goToPrev}
-            aria-label="Previous"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          {currentIndex > 0 &&
+            <button
+              style={{ opacity: 0.5 }}
+              className="absolute top-1/2 left-4 -translate-y-1/2 bg-[#3DCCC7] text-white p-3 rounded-full cursor-pointer hover:bg-[#07BEB8] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#07BEB8]"
+              onClick={goToPrev}
+              aria-label="Previous"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            style={{ opacity: 0.5 }}
-            className="absolute top-1/2 right-4 -translate-y-1/2 bg-[#3DCCC7] text-white p-3 rounded-full cursor-pointer hover:bg-[#07BEB8] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#07BEB8]"
-            onClick={goToNext}
-            aria-label="Next"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+          }
+
+          {currentIndex === 0 &&
+            <button
+              style={{ opacity: 0.5 }}
+              className="absolute top-1/2 right-4 -translate-y-1/2 bg-[#3DCCC7] text-white p-3 rounded-full cursor-pointer hover:bg-[#07BEB8] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#07BEB8]"
+              onClick={goToNext}
+              aria-label="Next"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          }
+
         </div>
       </div>
     </div>

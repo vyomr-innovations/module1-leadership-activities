@@ -79,6 +79,7 @@ export default function Com() {
 
   return (
     <div className="container mx-auto mt-5 p-4 max-w-5xl">
+      <h1 className="text-center text-2xl font-bold mb-[10px]">Is this correct or incorrect? Why?</h1>
       <div className="relative w-full overflow-hidden rounded-lg shadow-xl">
         <div className="relative h-[40rem] flex items-center justify-center"> {/* Height increased to h-[40rem] */}
           {images.map((image, index) => (
@@ -96,7 +97,7 @@ export default function Com() {
                 alt={`Image ${index + 1}`}
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white rounded-b-lg hidden md:block">
-                <p className="text-lg">{image.caption}</p>
+                <p className="text-lg text-center">{image.caption}</p>
               </div>
             </div>
           ))}

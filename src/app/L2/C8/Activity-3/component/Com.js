@@ -1,17 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const images = [
   {
     src: "https://res.cloudinary.com/dey9w5okl/image/upload/v1735275423/DALL_E_2024-12-26_20.01.51_-_A_10-year-old_boy_sitting_at_a_dining_table_asking_politely_for_a_salt_shaker_to_be_passed_to_him_instead_of_leaning_forward_to_reach_it._He_has_a_f_yjdcfu.webp",
     caption:
-      "Ron asks salt to be passed to him, instead of leaning on the table to reach out. ",
+      "Ron asks salt to be passed to him, instead of leaning on the table to reach out.",
   },
   {
     src: "https://res.cloudinary.com/dey9w5okl/image/upload/v1735275420/0932c2e3-2b53-45f3-a6aa-2099de611c3a_tjbbi1.jpg",
     caption:
-      "Sam is done with his food and he gets up while others at the table are still eating. ",
+      "Sam is done with his food and he gets up while others at the table are still eating.",
   },
   {
     src: "https://res.cloudinary.com/dey9w5okl/image/upload/v1735275419/772bded9-7c73-45c5-92f0-59139706ee58_vor9io.jpg",
@@ -23,7 +23,7 @@ const images = [
   },
   {
     src: "https://res.cloudinary.com/dey9w5okl/image/upload/v1735275418/e4b1c6e3-fa6e-405c-840f-9e8d52afdfa0_bx0cin.jpg",
-    caption: "Zain is seated upright on the table. ",
+    caption: "Zain is seated upright on the table.",
   },
   {
     src: "https://res.cloudinary.com/dey9w5okl/image/upload/v1735275417/63c2d758-dac1-4633-91a7-c75f09b8feea_weuoed.jpg",
@@ -78,28 +78,34 @@ export default function Com() {
   return (
     <div className="container mx-auto mt-5 p-4 max-w-5xl">
       <div className="relative w-full overflow-hidden rounded-lg shadow-xl">
-        <div className="relative h-[40rem] flex items-center justify-center">
+        <div className="relative h-[40rem] flex items-center justify-center bg-gray-100">
           {images.map((image, index) => (
             <div
               key={index}
               className={`
                 absolute top-0 left-0 w-full h-full
-                transition-opacity duration-700 ease-in-out
+                transition-opacity duration-700 ease-in-out flex flex-col items-center justify-center
                 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}
               `}
             >
               <img
                 src={image.src}
-                className="block w-full h-full object-cover rounded-lg"
+                className="max-h-[32rem] object-contain rounded-md"
                 alt={`Image ${index + 1}`}
               />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white rounded-b-lg hidden md:block">
-                <p className="text-lg">{image.caption}</p>
+              <div className="mt-4 px-6 text-center">
+                <p className="text-lg text-gray-800 font-medium">
+                  {image.caption}
+                </p>
+                <p className="text-md text-gray-700 mt-2 italic">
+                  Is it an example of correct table manners?
+                </p>
               </div>
             </div>
           ))}
         </div>
 
+        {/* Navigation Buttons */}
         <button
           className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full ml-2 z-20 hover:bg-opacity-75 transition-colors"
           type="button"
@@ -111,14 +117,13 @@ export default function Com() {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
               d="M15 19l-7-7 7-7"
-            ></path>
+            />
           </svg>
         </button>
         <button
@@ -132,14 +137,13 @@ export default function Com() {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
               d="M9 5l7 7-7 7"
-            ></path>
+            />
           </svg>
         </button>
       </div>

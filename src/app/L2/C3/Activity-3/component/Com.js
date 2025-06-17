@@ -123,7 +123,7 @@ const TaskSortingPuzzle = () => {
 
   return (
     <div className="container mx-auto p-4 w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-200 to-pink-300 rounded-lg shadow-2xl">
-      <h1 className="text-3xl font-extrabold mb-4 text-white drop-shadow-lg">
+      <h1 className="text-3xl font-extrabold mb-4 drop-shadow-lg">
         Task Sorting Puzzle
       </h1>
 
@@ -149,7 +149,7 @@ const TaskSortingPuzzle = () => {
           onDragLeave={handleDragLeave}
         >
           <h2 className="text-2xl font-bold text-gray-800 w-full text-center mb-2">
-            Available Tasks
+          List of Tasks
           </h2>
           {availableTasks.length === 0 ? (
             <p className="text-gray-500 text-lg self-center">

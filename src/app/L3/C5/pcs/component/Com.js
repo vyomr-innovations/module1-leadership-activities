@@ -57,6 +57,8 @@ export default function ResponsibilityTable() {
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-10 px-4">
       <h1 className="text-4xl font-bold text-center text-blue-800 mb-10">Responsibility Table</h1>
 
+      <p className="text-center mb-[25px] text-2xl">Create a responsibility or Chore chart for yourself. Track if you complete each task every day of the week.</p>
+
       <div className="overflow-x-auto shadow-md rounded-lg">
         <table className="min-w-full bg-white border border-blue-500 rounded-lg">
           <thead>
@@ -108,13 +110,18 @@ export default function ResponsibilityTable() {
         </table>
       </div>
 
-      <div className="flex justify-center gap-6 mt-8">
+
+
+      <div className="mt-[25px]">
         <button
           onClick={addRow}
           className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded shadow transition duration-300"
         >
-        Add Row
+          Add New Task
         </button>
+      </div>
+
+      <div className="flex justify-center gap-6 mt-6">
         <button
           onClick={generatePDF}
           className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-2 rounded shadow transition duration-300"

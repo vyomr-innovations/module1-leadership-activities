@@ -11,7 +11,7 @@ const allTasksData = [
   { id: "task4", text: "Eat" },
   { id: "task5", text: "Chores" },
   { id: "task6", text: "Study" },
-  { id: "task7", text: "Watch fav Show" },
+  { id: "task7", text: "Watch favourite Show" },
   { id: "task8", text: "Play Games on mobile or console" },
   { id: "task9", text: "Go to School" },
   { id: "task10", text: "Do Homework" },
@@ -24,7 +24,7 @@ const correctPlacement = {
   task4: "urgent-important", // Eat
   task5: "important-not-urgent", // Chores
   task6: "urgent-important", // Study
-  task7: "not-urgent-not-important", // Watch fav Show
+  task7: "not-urgent-not-important", // Watch favourite Show
   task8: "not-urgent-not-important", // Play Games on mobile or console
   task9: "urgent-important", // Go to School
   task10: "urgent-not-important", // Do Homework
@@ -141,7 +141,7 @@ const TaskSortingPuzzle = () => {
         <Com2 />
       ) : (
         <div className="container mx-auto p-4 w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-200 to-pink-300 rounded-lg shadow-2xl">
-          <h1 className="text-3xl font-extrabold mb-4 text-white drop-shadow-lg">
+          <h1 className="text-3xl font-extrabold mb-4 drop-shadow-lg">
             Task Sorting Puzzle
           </h1>
 
@@ -177,11 +177,11 @@ const TaskSortingPuzzle = () => {
               onDragLeave={handleDragLeave}
             >
               <h2 className="text-2xl font-bold text-gray-800 w-full text-center mb-2">
-                Available Tasks
+                List of Tasks
               </h2>
               {availableTasks.length === 0 ? (
                 <p className="text-gray-500 text-lg self-center">
-                  All tasks are placed in the quadrants!
+                  All the tasks are grouped correctly.
                 </p>
               ) : (
                 availableTasks.map((task) => (

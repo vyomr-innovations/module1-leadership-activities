@@ -110,6 +110,7 @@ export default function Com() {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-50 p-4">
+      <h1 className="text-2xl font-bold">What is this item called?</h1>
       <div className="w-full max-w-xl mt-5 text-center">
         <img
           src={currentImage.url}

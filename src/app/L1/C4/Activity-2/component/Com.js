@@ -19,7 +19,7 @@ const quizQuestions = [
   },
   {
     id: 2,
-    questionText: "2. What color was the first flower Buzz visited?",
+    questionText: "2. What was the color of the first flower that Buzz visited?",
     options: [
       { text: "a) Red", value: "a" },
       { text: "b) Yellow", value: "b" },
