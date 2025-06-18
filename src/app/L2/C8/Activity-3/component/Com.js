@@ -62,13 +62,11 @@ export default function Com() {
         </h3>
         <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
           <li>Sit upright at the dinner table.</li>
-          <li>Avoid commenting on the food.</li>
-          <li>Request items to be passed to you instead of leaning over the table.</li>
-          <li>Do not lick your fingers.</li>
-          <li>Avoid making loud noises while chewing or drinking.</li>
-          <li>Do not talk with a mouthful.</li>
-          <li>Use a separate serving utensil, not the spoon you are eating with, to serve food.</li>
-          <li>Do not slurp or make a noise while drinking.</li>
+          <li>Appreciate the food while being gentle with critique </li>
+          <li>Request for an item to be passed instead of leaning at the table. </li>
+          <li>Avoid licking fingers at the table</li>
+          <li>Avoid making slurping or chewing noises.</li>
+          <li>Do not use the serving spoon for personal dishes .</li>
           <li>Wait until everyone has finished eating before getting up from the table.</li>
         </ul>
       </div>
@@ -107,7 +105,7 @@ export default function Com() {
 
         {/* Navigation Buttons */}
         <button
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full ml-2 z-20 hover:bg-opacity-75 transition-colors"
+          className="border-4 hover:bg-gray-600 cursor-pointer absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full ml-2 z-20 hover:bg-opacity-75 transition-colors"
           type="button"
           onClick={handlePrev}
         >
@@ -127,7 +125,7 @@ export default function Com() {
           </svg>
         </button>
         <button
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full mr-2 z-20 hover:bg-opacity-75 transition-colors"
+          className="border-4 hover:bg-gray-600 cursor-pointer absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full mr-2 z-20 hover:bg-opacity-75 transition-colors"
           type="button"
           onClick={handleNext}
         >

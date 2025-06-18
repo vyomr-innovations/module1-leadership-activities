@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+
 
 const images = [
   {
@@ -57,6 +58,8 @@ const images = [
   },
 ];
 
+
+
 export default function Com() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showSummary, setShowSummary] = useState(false);
@@ -83,19 +86,18 @@ export default function Com() {
           Good Table Manners
         </h3>
         <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
-          <li>Sit upright at the dinner table, do not slouch.</li>
-          <li>Take small bites of food from the front of the plate.</li>
-          <li>Clean your mouth with a napkin.</li>
-          <li>Do not talk with food in your mouth.</li>
-          <li>Do not comment on the food.</li>
-          <li>Wait for others to be served before beginning.</li>
-          <li>Do not make loud noises while chewing or drinking.</li>
-          <li>Do not lick your fingers.</li>
-          <li>Cover your mouth,while burping.</li>
-          <li>Do not slurp or make a noise while drinking.</li>
-          <li>Request for food to be passed over.</li>
-          <li>Be polite and say thank you when food is served.</li>
-          <li>Wait until everyone is finished eating before getting up from the table.</li>
+          <li>Sit upright at the dinner table.</li>
+          <li>Use smaller portions instead of large.</li>
+          <li>Use a napkin for hygiene.</li>
+          <li>Do not speak with your mouthful.</li>
+          <li>Appreciate the food while being gentle with critique.</li>
+          <li>Request for an item to be passed instead of leaning at the table.</li>
+          <li>Avoid licking fingers at the table.</li>
+          <li>Avoid making slurping or chewing noises.</li>
+          <li>Say please and thank you where applicable.</li>
+          <li>Cover your mouth while burping.</li>
+          <li>Do not use the serving spoon for personal dishes.</li>
+          <li>Wait until everyone has finished eating before getting up from the table.</li>
         </ul>
       </div>
     );
@@ -104,30 +106,36 @@ export default function Com() {
   return (
     <div className="container mx-auto mt-5 p-4 max-w-5xl">
       <div className="relative w-full overflow-hidden rounded-lg shadow-xl">
-        <div className="relative h-[40rem] flex items-center justify-center">
+        <div className="relative h-[40rem] flex items-center justify-center bg-gray-100">
           {images.map((image, index) => (
             <div
               key={index}
               className={`
                 absolute top-0 left-0 w-full h-full
-                transition-opacity duration-700 ease-in-out
+                transition-opacity duration-700 ease-in-out flex flex-col items-center justify-center
                 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}
               `}
             >
               <img
                 src={image.src}
-                className="block w-full h-full object-cover rounded-lg"
+                className="max-h-[32rem] object-contain rounded-md"
                 alt={`Image ${index + 1}`}
               />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white rounded-b-lg hidden md:block">
-                <p className="text-lg">{image.caption}</p>
+              <div className="mt-4 px-6 text-center">
+                <p className="text-lg text-gray-800 font-medium">
+                  {image.caption}
+                </p>
+                <p className="text-md text-gray-700 mt-2 italic">
+                  Is it an example of correct table manners?
+                </p>
               </div>
             </div>
           ))}
         </div>
 
+        {/* Navigation Buttons */}
         <button
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full ml-2 z-20 hover:bg-opacity-75 transition-colors"
+          className="border-4 hover:bg-gray-600 cursor-pointer absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full ml-2 z-20 hover:bg-opacity-75 transition-colors"
           type="button"
           onClick={handlePrev}
         >
@@ -137,18 +145,17 @@ export default function Com() {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
               d="M15 19l-7-7 7-7"
-            ></path>
+            />
           </svg>
         </button>
         <button
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full mr-2 z-20 hover:bg-opacity-75 transition-colors"
+          className="border-4 hover:bg-gray-600 cursor-pointer absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-3 rounded-full mr-2 z-20 hover:bg-opacity-75 transition-colors"
           type="button"
           onClick={handleNext}
         >
@@ -158,14 +165,13 @@ export default function Com() {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
               d="M9 5l7 7-7 7"
-            ></path>
+            />
           </svg>
         </button>
       </div>

@@ -108,6 +108,12 @@
         }
     },
     "L2": {
+        "C1": {
+            "Activity 1": {
+                "link": "/L2/C1/Activity-1",
+                "name": "Logic Sequence"
+            }
+        },
         "C3": {
             "Activity 3": {
                 "link": "/L2/C3/Activity-3",
@@ -116,6 +122,10 @@
             "PCS": {
                 "link": "/L2/C3/pcs",
                 "name": "Plan Itiniery"
+            },
+            "Additional Activity": {
+                "link": "/L2/C3/AA",
+                "name": "Order tasks"
             }
         },
         "C4": {
@@ -198,6 +208,12 @@
         }
     },
     "L3": {
+        "C1": {
+            "Activity 1": {
+                "link": "/L3/C1/Activity-1",
+                "name": "Fixed sequence"
+            }
+        },
         "C2": {
             "Activity 3": {
                 "link": "/L3/C2/Activity-3",
@@ -267,8 +283,8 @@
             }
         },
         "C8": {
-            "Activity 2": {
-                "link": "/L3/C8/Activity-2",
+            "Activity 3": {
+                "link": "/L3/C8/Activity-3",
                 "name": "Table manners"
             },
             "Activity 5": {
