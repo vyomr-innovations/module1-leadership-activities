@@ -12,6 +12,7 @@ const Com = () => {
   const [rows, setRows] = useState(initialRows);
   const [optionNames, setOptionNames] = useState(['', '', '', '', '']);
   const [totals, setTotals] = useState([0, 0, 0, 0, 0]);
+  const [winner, setWinner] = useState("")
 
   const handleCriteriaChange = (e, index) => {
     const newRows = [...rows];
@@ -45,6 +46,51 @@ const Com = () => {
       });
     });
     setTotals(newTotals);
+
+
+    // let maxSum = -Infinity;
+    // let maxIndex = -1;
+    // rows.forEach((item, index) => {
+    //   const sum = item.scores.reduce((acc, val) => acc + val, 0);
+    //   if (sum > maxSum) {
+    //     maxSum = sum;
+    //     maxIndex = index;
+    //   }
+    // });
+
+
+    const numPeople = rows[0].scores.length;
+    const totalScores = Array(numPeople).fill(0);
+
+    rows.forEach(item => {
+      item.scores.forEach((score, i) => {
+        totalScores[i] += score;
+      });
+    });
+
+    const maxScore = Math.max(...totalScores);
+    let maxIndex = -1
+    if (maxScore > 0) {
+      maxIndex = totalScores.indexOf(maxScore);
+    }
+    // debugger
+
+
+
+    let winnder_ = ""
+    if (maxIndex === 0) {
+      winnder_ = "Option 1"
+    } else if (maxIndex === 1) {
+      winnder_ = "Option 2"
+    } else if (maxIndex === 2) {
+      winnder_ = "Option 3"
+    } else if (maxIndex === 3) {
+      winnder_ = "Option 4"
+    } else if (maxIndex === 4) {
+      winnder_ = "Option 5"
+    }
+    setWinner(winnder_)
+
   };
 
   useEffect(() => {
@@ -54,8 +100,10 @@ const Com = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800 p-5 font-sans">
       <h1 className="text-center text-4xl mb-4 text-blue-700">Pugh Matrix Tool</h1>
-      <h4 className="text-center text-lg mb-8 text-blue-600">(Fill in at least two options for comparison)</h4>
-
+      <h4 className="text-center text-lg mb-3 text-blue-600">(Fill in at least two options for comparison)</h4>
+      {winner &&
+        <h1 className='text-2xl text-center mb-[10px] font-bold text-green-600'>Selecting {winner} is the best option</h1>
+      }
       <table className="w-full border-collapse mb-5 bg-white text-gray-800 shadow-lg rounded-lg overflow-hidden">
         <thead>
           <tr className="bg-blue-200 text-gray-800">
@@ -141,14 +189,14 @@ const Com = () => {
         </tfoot>
       </table>
 
-      <div className="text-center">
+      {/* <div className="text-center">
         <button
           className="inline-block mt-4 px-6 py-3 text-lg text-white bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700 transition duration-300 ease-in-out shadow-lg"
           onClick={calculateMatrix}
         >
           Calculate
         </button>
-      </div>
+      </div> */}
 
       <div className="results text-center text-xl mt-8 text-blue-700">
         {/* You can display overall results here if needed based on the totals */}
